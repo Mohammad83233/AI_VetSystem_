@@ -1,0 +1,39 @@
+# --- AI Models (CRITICAL: Files > 100MB) ---
+# We ignore these because they are too large for GitHub
+backend/Brain_Files/*.pkl
+backend/Brain_Files/*.json
+
+# --- Backend (Python / FastAPI) ---
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.pytest_cache/
+.venv/
+venv/
+env/
+# Ignore secret database passwords
+.env
+
+# --- Frontend (React / Vite / Node) ---
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/*.local
+# Ignore Vite logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# --- Data & Datasets ---
+# We keep raw data locally to save GitHub space
+*.xlsx
+*.csv
+*.xls
+
+# --- System & IDE Files ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

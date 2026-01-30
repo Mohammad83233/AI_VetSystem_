@@ -16,7 +16,7 @@ from passlib.context import CryptContext
 
 # 0. SETUP
 warnings.filterwarnings("ignore")
-app = FastAPI(title="VetAI Clinical System v4.0 - 91% Precision & Daily Queue Sync")
+app = FastAPI(title="VetAI Clinical System v4.0 ")
 
 app.add_middleware(
     CORSMiddleware,
@@ -48,7 +48,7 @@ try:
     
     with open(os.path.join(BRAIN_DIR, 'veterinary_knowledge.json'), 'r') as f:
         vet_kb = json.load(f)
-    print("✅ AI Brain Integrated: High-Precision daily logic active.")
+    print("✅ AI Brain Integrated:  daily logic active.")
 except Exception as e:
     print(f"❌ CRITICAL ERROR LOADING BRAIN: {e}")
 
@@ -182,7 +182,8 @@ async def diagnose(req: DiagnosisRequest):
         for idx in top3_idx:
             predictions.append({
                 "disease": str(le_target.classes_[idx]),
-                "confidence": float(round(probs[idx] * 100, 2))
+               "confidence": float(f"{probs[idx] * 100:.2f}")
+
             })
 
         follow_up_question, suggested_symptom = None, None

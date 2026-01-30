@@ -17,7 +17,7 @@ const DoctorDashboard = ({ user, onLogout }) => {
       setLists(data);
     } catch (err) {
       console.error("Clinical queue sync failed");
-    }
+    } 
   };
 
   useEffect(() => {
